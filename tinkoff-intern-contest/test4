@@ -1,0 +1,15 @@
+thats=zero          # 0
+a=10 
+ten=a               # ten = 10
+aboba=ten           # aboba = 10
+ten=-10
+{
+    b=a             # b = 10
+    a=1337          
+    c=a             # c = 1337
+    {
+        d=a         # d = 1337
+        e=aboba     # e = 10
+    }
+}
+lol=a               # lol = 10
