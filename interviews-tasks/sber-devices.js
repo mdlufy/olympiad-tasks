@@ -17,7 +17,7 @@ new Promise((resolve) => {
 
 console.log("5");
 
-// ??
+// 23541
 
 
 
@@ -32,18 +32,18 @@ const shape = {
     perimeter: () => 2 * Math.PI * this.radius,
 };
 
-shape.diameter(); // ??
-shape.perimeter(); // ??
+shape.diameter(); // 20
+shape.perimeter(); // NaN
 
 const shape2 = Object.create(shape);
 
 shape2.radius = 20;
 
-const d = shape2.diameter;
+const d = shape2.diameter; // -> shape2.diameter.bind(shape2)
 
-d(); // ??
+d(); // NaN -> 40
 
-shape2.diameter.call(shape); // ??
+shape2.diameter.call(shape); // 20
 
 
 
@@ -53,9 +53,9 @@ shape2.diameter.call(shape); // ??
 
 const prettyIncrement = (n) => n++ - --n;
 
-console.log(prettyIncrement(0)); // ??
-console.log(prettyIncrement(1)); // ??
-console.log(prettyIncrement(2)); // ??
+console.log(prettyIncrement(0)); // (0) => 1 (0) - 0 (0) => 0
+console.log(prettyIncrement(1)); // (1) => 2 (1) - 1 (1) => 0
+console.log(prettyIncrement(2)); // (2) => 3 (2) - 2 (2) => 0
 
 
 
@@ -65,5 +65,7 @@ console.log(prettyIncrement(2)); // ??
 delay(1000).then(() => alert("Hello!"));
 
 function delay(ms) {
-    // ??
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(), ms)
+    })
 }

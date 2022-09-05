@@ -17,6 +17,6 @@ function Rabbit() {}
 
 Rabbit.prototype = {};
 
-let obj = new Rabbit();
+let obj3 = new Rabbit();
 
-let obj2 = new obj.constructor();
+let obj4 = new obj3.constructor();
