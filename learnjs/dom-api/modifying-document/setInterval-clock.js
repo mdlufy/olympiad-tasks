@@ -18,7 +18,9 @@
 let timerId;
 
 function clockStart() {
-    timerId = setInterval(update, 1000);
+    if (!timerId) {
+        timerId = setInterval(update, 1000);
+    }
     update();
 }
 
@@ -28,19 +30,19 @@ function clockStop() {
 }
 
 function update() {
-    const clock = document.querySelectorAll('span');
+    const clock = document.getElementById('clock');
 
-    const date = new Date();
+    let date = new Date();
 
-    const hours =
-        date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
-    clock[0].textContent = hours;
+    let hours = date.getHours();
+    if (hours < 10) hours = '0' + hours;
+    clock.children[0].innerHTML = hours;
 
-    const minuts =
-        date.getMinuts() < 10 ? '0' + date.getMinuts() : date.getMinuts();
-    clock[1].textContent = minuts;
+    let minutes = date.getMinutes();
+    if (minutes < 10) minutes = '0' + minutes;
+    clock.children[1].innerHTML = minutes;
 
-    const seconds =
-        date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
-    clock[2].textContent = seconds;
+    let seconds = date.getSeconds();
+    if (seconds < 10) seconds = '0' + seconds;
+    clock.children[2].innerHTML = seconds;
 }
