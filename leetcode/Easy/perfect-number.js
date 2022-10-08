@@ -2,6 +2,6 @@
  * @param {number} num
  * @return {boolean}
  */
- var checkPerfectNumber = function(num) {
-    
+var checkPerfectNumber = function(num) {
+    let check = true; 
 };
