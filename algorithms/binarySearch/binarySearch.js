@@ -27,9 +27,9 @@ function binarySearchRecursive(sortedArray, item, start, end) {
     if (item === guess) return mid;
 
     if (item < guess) {
-        return binary_search_recursive(sortedArray, item, start, mid - 1);
+        return binarySearchRecursive(sortedArray, item, start, mid - 1);
     } else {
-        return binary_search_recursive(sortedArray, item, mid + 1, end);
+        return binarySearchRecursive(sortedArray, item, mid + 1, end);
     }
 }
 
