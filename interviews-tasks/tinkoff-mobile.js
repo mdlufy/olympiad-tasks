@@ -44,8 +44,7 @@ setTimeout(function() {
   
 console.log(6)
 
-// // 1 4 6 3 2 5
-
+// 146325
 
 // Кейс 5
 /* 
@@ -62,10 +61,12 @@ function testBrackets(str) {
     for (let i = 0; i < str.length; i++) {
       if (str[i] == '(') {
         stack.push(str[i]);
-      } else {
-        if (!stack.pop()) {
-          return false;
-        }
+
+        return;
+      }
+
+      if (!stack.pop()) {
+        return false;
       }
     } 
     
