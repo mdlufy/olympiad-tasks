@@ -32,8 +32,8 @@ const shape = {
     perimeter: () => 2 * Math.PI * this.radius,
 };
 
-shape.diameter(); // 20
-shape.perimeter(); // NaN
+console.log(shape.diameter()); // 20
+console.log(shape.perimeter()); // NaN
 
 const shape2 = Object.create(shape);
 
@@ -41,7 +41,7 @@ shape2.radius = 20;
 
 const d = shape2.diameter; // -> shape2.diameter.bind(shape2)
 
-d(); // NaN -> 40
+console.log(d()); // NaN -> 40
 
 shape2.diameter.call(shape); // 20
 
@@ -62,10 +62,10 @@ console.log(prettyIncrement(2)); // (2) => 3 (2) - 2 (2) => 0
 
 // 4
 
-delay(1000).then(() => alert("Hello!"));
+delay(1000).then(() => console.log("Hello!"));
 
 function delay(ms) {
     return new Promise((resolve) => {
-        setTimeout(() => resolve(), ms)
+        setTimeout(resolve, ms)
     })
 }
