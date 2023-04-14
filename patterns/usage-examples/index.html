@@ -7,7 +7,26 @@
         <title>Document</title>
     </head>
     <body>
+        <p>...содержимое перед скриптом...</p>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => alert("Дерево DOM готово после скрипта с 'defer'!"));
+        </script>
+
+        <script
+            defer
+            src="https://javascript.info/article/script-async-defer/long.js?speed=1"
+        >
+        </script>
+
+        <!-- отображается сразу же -->
+        <p>...содержимое после скрипта...</p>
         <div id="root"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                console.log(document.readyState);
+            });
+        </script>
         <script type="module" src="./index.js"></script>
     </body>
 </html>
