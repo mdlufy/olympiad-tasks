@@ -40,7 +40,7 @@ function evenReverseTransposition(inputArray, rows, cols) {
 function groupBy(inputArray, count) {
     const resultArray = [];
 
-    inputArray.forEach((value, index, array) => {
+    inputArray.forEach((_, index, array) => {
         if (index % count === 0) {
             resultArray.push(array.slice(index, index + count));
         }
@@ -49,11 +49,7 @@ function groupBy(inputArray, count) {
     return resultArray;
 }
 
-const nums = [
-    19, 10, 3, 7, 9, 8, 5, 2, 1, 17, 16, 14, 12, 18, 6, 13, 11, 20, 4, 15,
-];
-
+const nums = [ 19, 10, 3, 7, 9, 8, 5, 2, 1, 17, 16, 14, 12, 18, 6, 13, 11, 20, 4, 15 ];
 console.log(nums.snail(5, 4));
 
-const arr = [1, 2, 3, 4];
-console.log(arr.snail(1, 4)); // [[1,2,3,4]]
+console.log([1, 2, 3, 4].snail(1, 4)); // [ [1,2,3,4] ]
