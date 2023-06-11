@@ -28,7 +28,6 @@ async function* fetchCommits(repo) {
         console.log(commit.author.login);
 
         if (++count === 40) {
-            // остановимся на 100 коммитах
             break;
         }
     }
